@@ -3,11 +3,11 @@
 # https://developer.github.com/v3/checks/runs/#output-object
 class ReportAdapter
   class << self
-    CONCLUSION_TYPES = { failure: 'failure', success: 'success' }.freeze
+    CONCLUSION_TYPES = { failure: 'failure', neutral: 'neutral', success: 'success' }.freeze
     ANNOTATION_LEVEL = { notice: 'notice', warning: 'warning', failure: 'failure' }.freeze
 
     def conslusion(report)
-      return CONCLUSION_TYPES[:failure] if security_warnings(report).positive?
+      return CONCLUSION_TYPES[:neutral] if security_warnings(report).positive?
 
       CONCLUSION_TYPES[:success]
     end
