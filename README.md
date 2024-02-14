@@ -7,7 +7,7 @@ Brakeman is a static analysis tool which checks Ruby on Rails applications for s
 
 ```yml
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: devmasx/brakeman-linter-action@v1.0.1
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
@@ -22,7 +22,7 @@ Brakeman is a static analysis tool which checks Ruby on Rails applications for s
   run: |
     brakeman -f json > tmp/brakeman.json || exit 0
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: devmasx/brakeman-linter-action@v1.0.1
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     REPORT_PATH: tmp/brakeman.json
@@ -32,7 +32,7 @@ Brakeman is a static analysis tool which checks Ruby on Rails applications for s
 
 ```yml
 - name: Brakeman
-  uses: devmasx/brakeman-linter-action@v1.0.0
+  uses: devmasx/brakeman-linter-action@v1.0.1
   env:
     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     PROJECT_PATH: my_rails_app
@@ -51,7 +51,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Brakeman
-      uses: devmasx/brakeman-linter-action@v1.0.0
+      uses: devmasx/brakeman-linter-action@v1.0.1
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
